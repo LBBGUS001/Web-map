@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="data/surplusfood_vulnerability_0.js"></script>
+        <script src="data/surplusfood_distribution_c_1.js"></script>
+        <script src="data/surplusZoning_ExportFeatures_2.js"></script>
+        <script src="data/surplusSL_CGIS_CCT_STORES_3.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-34.35676718132963,18.198798812300943],[-33.637040258957015,19.047337937300945]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_surplusfood_vulnerability_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['pr_name'] !== null ? Autolinker.link(String(feature.properties['pr_name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Description'] !== null ? Autolinker.link(String(feature.properties['Description'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_surplusfood_vulnerability_0_0() {
+            return {
+                pane: 'pane_surplusfood_vulnerability_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,180,93,1.0)',
+            }
+        }
+        map.createPane('pane_surplusfood_vulnerability_0');
+        map.getPane('pane_surplusfood_vulnerability_0').style.zIndex = 400;
+        map.getPane('pane_surplusfood_vulnerability_0').style['mix-blend-mode'] = 'normal';
+        var layer_surplusfood_vulnerability_0 = new L.geoJson(json_surplusfood_vulnerability_0, {
+            attribution: '',
+            pane: 'pane_surplusfood_vulnerability_0',
+            onEachFeature: pop_surplusfood_vulnerability_0,
+            style: style_surplusfood_vulnerability_0_0,
+        });
+        bounds_group.addLayer(layer_surplusfood_vulnerability_0);
+        map.addLayer(layer_surplusfood_vulnerability_0);
+        function pop_surplusfood_distribution_c_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['pr_name'] !== null ? Autolinker.link(String(feature.properties['pr_name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Description'] !== null ? Autolinker.link(String(feature.properties['Description'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_surplusfood_distribution_c_1_0() {
+            return {
+                pane: 'pane_surplusfood_distribution_c_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(37,199,213,1.0)',
+            }
+        }
+        map.createPane('pane_surplusfood_distribution_c_1');
+        map.getPane('pane_surplusfood_distribution_c_1').style.zIndex = 401;
+        map.getPane('pane_surplusfood_distribution_c_1').style['mix-blend-mode'] = 'normal';
+        var layer_surplusfood_distribution_c_1 = new L.geoJson(json_surplusfood_distribution_c_1, {
+            attribution: '',
+            pane: 'pane_surplusfood_distribution_c_1',
+            onEachFeature: pop_surplusfood_distribution_c_1,
+            style: style_surplusfood_distribution_c_1_0,
+        });
+        bounds_group.addLayer(layer_surplusfood_distribution_c_1);
+        map.addLayer(layer_surplusfood_distribution_c_1);
+        function pop_surplusZoning_ExportFeatures_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['int_zone_d'] !== null ? Autolinker.link(String(feature.properties['int_zone_d'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_surplusZoning_ExportFeatures_2_0(feature) {
+            switch(String(feature.properties['int_zone_d'])) {
+                case 'Agricultural':
+                    return {
+                pane: 'pane_surplusZoning_ExportFeatures_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(175,103,15,1.0)',
+            }
+                    break;
+                case 'Rural':
+                    return {
+                pane: 'pane_surplusZoning_ExportFeatures_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_surplusZoning_ExportFeatures_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,36,170,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_surplusZoning_ExportFeatures_2');
+        map.getPane('pane_surplusZoning_ExportFeatures_2').style.zIndex = 402;
+        map.getPane('pane_surplusZoning_ExportFeatures_2').style['mix-blend-mode'] = 'normal';
+        var layer_surplusZoning_ExportFeatures_2 = new L.geoJson(json_surplusZoning_ExportFeatures_2, {
+            attribution: '',
+            pane: 'pane_surplusZoning_ExportFeatures_2',
+            onEachFeature: pop_surplusZoning_ExportFeatures_2,
+            style: style_surplusZoning_ExportFeatures_2_0,
+        });
+        bounds_group.addLayer(layer_surplusZoning_ExportFeatures_2);
+        map.addLayer(layer_surplusZoning_ExportFeatures_2);
+        function pop_surplusSL_CGIS_CCT_STORES_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bldg_usg'] !== null ? Autolinker.link(String(feature.properties['bldg_usg'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_surplusSL_CGIS_CCT_STORES_3_0() {
+            return {
+                pane: 'pane_surplusSL_CGIS_CCT_STORES_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,0,40,1.0)',
+            }
+        }
+        map.createPane('pane_surplusSL_CGIS_CCT_STORES_3');
+        map.getPane('pane_surplusSL_CGIS_CCT_STORES_3').style.zIndex = 403;
+        map.getPane('pane_surplusSL_CGIS_CCT_STORES_3').style['mix-blend-mode'] = 'normal';
+        var layer_surplusSL_CGIS_CCT_STORES_3 = new L.geoJson(json_surplusSL_CGIS_CCT_STORES_3, {
+            attribution: '',
+            pane: 'pane_surplusSL_CGIS_CCT_STORES_3',
+            onEachFeature: pop_surplusSL_CGIS_CCT_STORES_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_surplusSL_CGIS_CCT_STORES_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_surplusSL_CGIS_CCT_STORES_3);
+        map.addLayer(layer_surplusSL_CGIS_CCT_STORES_3);
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topleft',
+            text: 'Search',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Search for a place';
+        setBounds();
+        </script>
+    </body>
+</html>
